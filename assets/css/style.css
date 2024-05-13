@@ -1,0 +1,281 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    height: 100vh;
+
+    display: grid;
+    grid-template-rows: 5vh 10vh 80vh 5vh;
+    grid-template-columns: 100%;
+    grid-template-areas: 
+        "nav"
+        "filtro"
+        "main"
+        "footer";
+
+}
+
+nav {
+    grid-area: nav;
+    background-color: blue;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    color: white;
+}
+
+.lista_menu {
+    display: flex;
+    
+}
+
+nav .icono {
+    display: none;
+}
+
+ul {
+    display: flex;
+}
+
+ul li {
+    list-style: none;
+}
+
+ul li a {
+    margin-right: 20px;
+    color: white;
+}
+
+main {
+    grid-area: main;
+
+    display: flex;
+    flex-direction: column;
+    /*justify-content: space-between;*/
+    justify-content: center;
+    align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+
+}
+
+.mainProductos {
+    
+
+    display: grid;
+    /*grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));*/
+    /*grid-template-rows: repeat(auto-fill, minmax(350px, 1fr));*/
+    grid-template-rows:repeat(auto-fill, 350px);
+    overflow-y: scroll;
+    overflow-x: hidden;
+    justify-items: center;
+    align-items: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    
+
+}
+
+
+.card {
+    height: 300px;
+    width: 300px;
+    background-color: white;
+    margin: 10px;
+    border: 0.1px solid #CFCFCF;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    box-shadow: 6px 9px 7px -1px rgba(61,57,57,0.57);
+    -webkit-box-shadow: 6px 9px 7px -1px rgba(61,57,57,0.57);
+    -moz-box-shadow: 6px 9px 7px -1px rgba(61,57,57,0.57);
+
+}
+
+.contenedorImg {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    padding: 20px;
+
+}
+
+.contenedorImg img {
+    
+    width: 100%;
+    object-fit: scale-down;
+
+    
+}
+
+.card h5 {
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0;
+    margin-top: 5px;
+    color: #461E1E;
+    
+}
+
+.card button {
+    width: 100%;
+    padding: 10px;
+    margin: 0;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+
+
+
+}
+
+
+.filtro {
+    grid-area: filtro;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: lightslategray;
+}
+
+.filtro p {
+    margin: 0;
+    color: white;
+}
+
+.filtro select {
+    margin-top: 10px;
+    width: 80%;
+    height: 35px;
+}
+
+.cajaPaginacion {
+    display: flex;
+    padding: 10px;
+   
+    
+}
+
+.paginacion {
+    display: flex;
+    border: 0.5px solid gray;
+    width: 150px;
+    justify-content: space-between;
+    border-radius: 5px;
+    color: blue;
+    
+
+}
+
+.paginacion div {
+    padding: 10px;
+    border-right: 0.5px solid gray;
+}
+
+.paginacion div:last-child {
+    border-right: none;
+}
+
+footer {
+    grid-area: footer;
+    background-color: blue;
+    color: white;
+    text-align: center;
+    height: 50px;
+
+    
+
+
+}
+
+
+@media (max-width: 576px) {
+    .lista_menu {
+        display: none;
+    }
+
+    nav .icono {
+        display: block;
+    }
+}
+
+@media (min-width: 576px) {
+    body {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        height: 100vh;
+    
+        display: grid;
+        grid-template-columns: 200px auto;
+        grid-template-rows: 90px auto 100px;
+        grid-template-areas: 
+            "nav filtro"
+            "nav main"
+            "footer main";
+    
+    }
+
+    nav {
+        grid-area: nav;
+        background-color: blue;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+    
+        color: white;
+    }
+
+    .lista_menu {
+        display: block;
+        justify-content: center;
+        padding: 0;
+
+    }
+
+    .mainProductos {
+    
+        width: 100%;
+
+        display: grid;
+        /*grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));*/
+        /*grid-template-columns: repeat(auto-fill);*/
+        grid-template-columns: repeat(3,1fr);
+        overflow-y: scroll;
+        justify-items: center;
+        align-items: center;
+        font-family: Georgia, 'Times New Roman', Times, serif;
+    }
+
+    footer {
+
+        height: 15vh; 
+           
+    
+    }
+
+    main {
+        height: 90vh;
+        padding: 0;
+    }
+    
+    .cajaPaginacion {
+
+        padding: 0;
+       
+        
+    }
+
+
+
+
+}
